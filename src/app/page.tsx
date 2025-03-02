@@ -11,7 +11,7 @@ export default function Home() {
           Created by <a href="https://github.com/ruugii" className=" flex content-center justify-center items-center gap-2.5 hover:underline">Roger Barrero</a>
         </p>
         <p className=" flex gap-2.5">
-          <a href="https://github.com/ruugii/Time-in-your-location" className=" flex content-center justify-center items-center gap-2.5 hover:underline">
+          <a href="https://github.com/ruugii/results-la-liga" className=" flex content-center justify-center items-center gap-2.5 hover:underline">
             Github repository <img src="/github-logo.svg" alt="github logo" width="20px" />
           </a>
         </p>
