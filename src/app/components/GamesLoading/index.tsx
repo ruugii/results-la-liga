@@ -44,31 +44,45 @@ export default function GamesLoading() {
 
   return (
     <>
-      {
-        loading ? (
-          <div className="flex flex-col gap-4 items-center">
-            <h1>
-              Loading
-            </h1>
-          </div>
-        ) : (
-          <div className="flex flex-col gap-4 items-center">
-            <h1>
-              ULTIMOS PARTIDOS DE LA LIGA
-            </h1>
-            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {
-                matches.map((match: MatchInterface, index: number) => {
-                  return (
-                    <Game
-                      match={match}
-                      key={index + 1}
-                    />
-                  )
-                })
-              }
+      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        {
+          loading ? (
+            <div className=" fixed top-0 left-0 w-full h-full bg-white/50 flex justify-center items-center">
+              Loading...
             </div>
-          </div>
+          ) : (
+            <div className="flex flex-col gap-4 items-center">
+              <h1>
+                ULTIMOS PARTIDOS DE LA LIGA
+              </h1>
+              <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {
+                  matches.map((match: MatchInterface, index: number) => {
+                    return (
+                      <Game
+                        match={match}
+                        key={index + 1}
+                      />
+                    )
+                  })
+                }
+              </div>
+            </div>
+          )
+        }
+      </main>
+      {
+        !loading && (
+          <footer className=" flex w-full content-center justify-center items-center gap-4">
+            <p className=" flex gap-2.5">
+              Created by <a href="https://github.com/ruugii" className=" flex content-center justify-center items-center gap-2.5 hover:underline">Roger Barrero</a>
+            </p>
+            <p className=" flex gap-2.5">
+              <a href="https://github.com/ruugii/results-la-liga" className=" flex content-center justify-center items-center gap-2.5 hover:underline">
+                Github repository <img src="/github-logo.svg" alt="github logo" width="20px" />
+              </a>
+            </p>
+          </footer>
         )
       }
     </>
