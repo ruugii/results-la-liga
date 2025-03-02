@@ -13,7 +13,7 @@ export default function GamesLoading() {
     return "https://odds.p.rapidapi.com/v4/sports/" + sport + "/scores?daysFrom=3";
   }
 
-  function getMatches(league: string) {
+  const getMatches = (league: string) => {
     const options = {
       method: 'GET',
       headers: {

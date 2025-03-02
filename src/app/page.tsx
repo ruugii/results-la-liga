@@ -1,4 +1,3 @@
-import Image from "next/image";
 import GamesLoading from "./components/GamesLoading";
 
 export default function Home() {

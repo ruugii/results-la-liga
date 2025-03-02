@@ -16,7 +16,16 @@ export default function Game(props: GameProps) {
         <>
           <h1>
             {
-              match.scores[0].name + ' ' + match.scores[0].score + ' - ' + match.scores[1].score + ' ' + match.scores[1].name
+              match.scores ? (match.scores.map((score: {
+                name: string;
+                score: string;
+              }, index: number) => (
+                index === 0 ? (
+                  `${score.name} ${score.score} - `
+                ) : (
+                  `${score.score} ${score.name}`
+                )
+              ))) : (match.home_team + ' vs ' + match.away_team)
             }
           </h1>
           <h2> ACABADO - {new Date(match.commence_time).toLocaleDateString() + ' ' + new Date(match.commence_time).toLocaleTimeString()}</h2>
